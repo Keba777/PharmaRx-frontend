@@ -1,16 +1,20 @@
-# mobile
+# PharmaRx Frontend - Online Pharmacy Platform
 
-A new Flutter project.
+## Project Overview
+The PharmaRx Frontend is designed for users to interact with the PharmaRx platform through a web interface. It connects to the backend API to display medications, manage orders, and handle user authentication and prescription uploads.
 
-## Getting Started
+## Features:
+- User Authentication
+- Medication Browsing
+- Order Placement
+- Prescription Upload (with image scanning functionality)
 
-This project is a starting point for a Flutter application.
+## Running the Frontend:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+```
+git clone https://github.com/Keba777/PharmaRx-frontend.git
+```
+2. Run the Flutter app:
+```
+flutter run
