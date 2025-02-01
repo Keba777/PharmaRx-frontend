@@ -23,7 +23,7 @@ Future<void> init() async {
   sl.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(remoteDataSource: sl()));
 
   // Data sources
-  sl.registerLazySingleton<AuthRemoteDataSource>(() => AuthRemoteDataSourceImpl(client: http.Client(), baseUrl: 'http://your-backend-url'));
+  sl.registerLazySingleton<AuthRemoteDataSource>(() => AuthRemoteDataSourceImpl(client: http.Client(), baseUrl: 'https://pharmarx-backend-1.onrender.com/api'));
 
   // External
   sl.registerLazySingleton(() => http.Client());
