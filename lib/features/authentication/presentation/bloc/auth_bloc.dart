@@ -1,15 +1,24 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:mobile/features/authentication/domain/repositories/auth_repository.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc() : super(AuthInitial()) {
+  final AuthRepository authRepository;
+
+  AuthBloc({required this.authRepository}) : super(AuthInitial()) {
     on<RegisterUserEvent>((event, emit) async {
       try {
         emit(AuthLoading());
-        // Call register user use case here.
+        await authRepository.registerUser(
+          event.firstName,
+          event.email,
+          event.phone,
+          event.role,
+          event.address,
+        );
         emit(RegisterSuccess());
       } catch (e) {
         emit(AuthError(message: e.toString()));
@@ -19,7 +28,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LoginUserEvent>((event, emit) async {
       try {
         emit(AuthLoading());
-        // Call login user use case here.
+        await authRepository.loginUser(event.email);
         emit(LoginOTPSent());
       } catch (e) {
         emit(AuthError(message: e.toString()));
@@ -29,8 +38,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<VerifyOTPEvent>((event, emit) async {
       try {
         emit(AuthLoading());
-        // Call verify OTP use case here.
-        emit(OTPVerified(token: "sample_token", user: {})); // Replace with actual data.
+        final result = await authRepository.verifyOTP(event.email, event.otp);
+        emit(OTPVerified(token: result['token'], user: result['user']));
       } catch (e) {
         emit(AuthError(message: e.toString()));
       }

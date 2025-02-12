@@ -12,7 +12,7 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   // Bloc
-  sl.registerFactory(() => AuthBloc());
+  sl.registerFactory(() => AuthBloc(authRepository: sl()));
 
   // Use cases
   sl.registerLazySingleton(() => RegisterUser(sl()));
@@ -23,7 +23,9 @@ Future<void> init() async {
   sl.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(remoteDataSource: sl()));
 
   // Data sources
-  sl.registerLazySingleton<AuthRemoteDataSource>(() => AuthRemoteDataSourceImpl(client: http.Client(), baseUrl: 'https://pharmarx-backend-1.onrender.com/api'));
+  sl.registerLazySingleton<AuthRemoteDataSource>(
+    () => AuthRemoteDataSourceImpl(client: sl(), baseUrl: 'https://pharmarx-backend-1.onrender.com/api'),
+  );
 
   // External
   sl.registerLazySingleton(() => http.Client());

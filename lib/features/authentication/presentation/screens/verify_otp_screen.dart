@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile/core/routes/app_router.gr.dart';
 import '../bloc/auth_bloc.dart';
 
 @RoutePage()
@@ -17,7 +18,7 @@ class VerifyOTPScreen extends StatelessWidget {
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is OTPVerified) {
-            Navigator.pushReplacementNamed(context, '/home');
+            context.router.push(HomeRoute());
           } else if (state is AuthError) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(state.message)),

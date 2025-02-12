@@ -8,9 +8,9 @@ class AppRouter extends RootStackRouter {
   RouteType get defaultRouteType => const RouteType.material();
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: HomeRoute.page, initial: true),
-        AutoRoute(page: RegisterRoute.page),
-        AutoRoute(page: LoginRoute.page),
+        AutoRoute(page: HomeRoute.page, path: '/home'),
+        AutoRoute(page: RegisterRoute.page, path: '/register',  initial: true),
+        AutoRoute(page: LoginRoute.page, path: '/login',),
         AutoRoute(page: VerifyOTPRoute.page),
       ];
 
