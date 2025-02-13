@@ -21,13 +21,13 @@ class TextStyles {
   //   height: 30 / 28,
   // );
 
-  // static const TextStyle formSubheading = TextStyle(
-  //   color: AppColors.mediumGray,
-  //   fontSize: 16,
-  //   fontFamily: fontFamily,
-  //   fontWeight: FontWeight.w400,
-  //   height: 16 / 14,
-  // );
+  static const TextStyle formSubheading = TextStyle(
+    color: AppColors.mediumGray,
+    fontSize: 18,
+    fontFamily: fontFamily,
+    fontWeight: FontWeight.w400,
+    height: 16 / 14,
+  );
 
   static const TextStyle labelText = TextStyle(
     color: AppColors.lightGray,
