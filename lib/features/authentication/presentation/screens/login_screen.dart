@@ -21,7 +21,8 @@ class LoginScreen extends StatelessWidget {
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is LoginOTPSent) {
-            context.router.push(VerifyOTPRoute());
+            final trimmedEmail = emailController.text.trim();
+            context.router.push(VerifyOTPRoute(email: trimmedEmail));
           }
         },
         builder: (context, state) {
@@ -40,11 +41,12 @@ class LoginScreen extends StatelessWidget {
                   child: Image.asset(AppAssets.logo, width: 100, height: 100),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 45, left: 24, right: 24),
+                  padding:
+                      const EdgeInsets.only(bottom: 45, left: 24, right: 24),
                   child: Text(
                     'Enter your email address, and we\'ll send you a one-time password (OTP).',
                     style: TextStyles.formSubheading,
-                    textAlign: TextAlign.center, 
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 CustomTextField(
@@ -68,8 +70,9 @@ class LoginScreen extends StatelessWidget {
                     onPressed: isLoading
                         ? () {}
                         : () {
+                            final enteredEmail = emailController.text.trim();
                             context.read<AuthBloc>().add(
-                                  LoginUserEvent(email: emailController.text),
+                                  LoginUserEvent(email: enteredEmail),
                                 );
                           },
                     btnText: isLoading ? 'Sending...' : 'Send OTP',

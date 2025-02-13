@@ -10,6 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:flutter/material.dart' as _i6;
 import 'package:pharmarx/features/authentication/presentation/screens/login_screen.dart'
     as _i2;
 import 'package:pharmarx/features/authentication/presentation/screens/register_screen.dart'
@@ -68,16 +69,37 @@ class RegisterRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.VerifyOTPScreen]
-class VerifyOTPRoute extends _i5.PageRouteInfo<void> {
-  const VerifyOTPRoute({List<_i5.PageRouteInfo>? children})
-    : super(VerifyOTPRoute.name, initialChildren: children);
+class VerifyOTPRoute extends _i5.PageRouteInfo<VerifyOTPRouteArgs> {
+  VerifyOTPRoute({
+    _i6.Key? key,
+    required String email,
+    List<_i5.PageRouteInfo>? children,
+  }) : super(
+         VerifyOTPRoute.name,
+         args: VerifyOTPRouteArgs(key: key, email: email),
+         initialChildren: children,
+       );
 
   static const String name = 'VerifyOTPRoute';
 
   static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      return const _i4.VerifyOTPScreen();
+      final args = data.argsAs<VerifyOTPRouteArgs>();
+      return _i4.VerifyOTPScreen(key: args.key, email: args.email);
     },
   );
+}
+
+class VerifyOTPRouteArgs {
+  const VerifyOTPRouteArgs({this.key, required this.email});
+
+  final _i6.Key? key;
+
+  final String email;
+
+  @override
+  String toString() {
+    return 'VerifyOTPRouteArgs{key: $key, email: $email}';
+  }
 }

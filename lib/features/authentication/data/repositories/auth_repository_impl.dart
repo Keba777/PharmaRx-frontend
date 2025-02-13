@@ -20,4 +20,9 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Map<String, dynamic>> verifyOTP(String email, String otp) {
     return remoteDataSource.verifyOTP(email, otp);
   }
+
+  @override
+  Future<void> resendOTP(String email) {
+    return remoteDataSource.loginUser(email);
+  }
 }

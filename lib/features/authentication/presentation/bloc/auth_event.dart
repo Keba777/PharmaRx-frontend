@@ -38,3 +38,12 @@ class VerifyOTPEvent extends AuthEvent {
   @override
   List<Object?> get props => [email, otp];
 }
+
+class ResendOTPEvent extends AuthEvent {
+  final String email;
+
+  const ResendOTPEvent({required this.email});
+
+  @override
+  List<Object?> get props => [email];
+}

@@ -69,3 +69,28 @@ class _CustomTextButtonState extends State<CustomTextButton> {
     );
   }
 }
+
+class CustomSecondaryTextButton extends StatelessWidget {
+  final String btnText;
+  final VoidCallback? onPressed;
+
+  const CustomSecondaryTextButton({
+    super.key,
+    required this.btnText,
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      style: ButtonStyle(
+        foregroundColor: WidgetStateProperty.all(AppColors.primaryRed),
+      ),
+      child: Text(
+        btnText,
+        style: TextStyles.textButtonText,
+      ),
+    );
+  }
+}

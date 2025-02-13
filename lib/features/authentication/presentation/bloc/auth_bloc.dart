@@ -44,5 +44,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthError(message: e.toString()));
       }
     });
+
+    on<ResendOTPEvent>((event, emit) async {
+  try {
+    emit(AuthLoading());
+    await authRepository.resendOTP(event.email);
+    emit(LoginOTPSent()); // You can emit a new state if needed
+  } catch (e) {
+    emit(AuthError(message: e.toString()));
+  }
+});
+
   }
 }
