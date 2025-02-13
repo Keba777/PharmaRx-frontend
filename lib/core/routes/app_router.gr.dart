@@ -10,13 +10,13 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:mobile/features/authentication/presentation/screens/login_screen.dart'
+import 'package:pharmarx/features/authentication/presentation/screens/login_screen.dart'
     as _i2;
-import 'package:mobile/features/authentication/presentation/screens/register_screen.dart'
+import 'package:pharmarx/features/authentication/presentation/screens/register_screen.dart'
     as _i3;
-import 'package:mobile/features/authentication/presentation/screens/verify_otp_screen.dart'
+import 'package:pharmarx/features/authentication/presentation/screens/verify_otp_screen.dart'
     as _i4;
-import 'package:mobile/home_screen.dart' as _i1;
+import 'package:pharmarx/home_screen.dart' as _i1;
 
 /// generated route for
 /// [_i1.HomeScreen]

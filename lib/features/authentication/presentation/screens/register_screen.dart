@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mobile/core/routes/app_router.gr.dart';
-import 'package:mobile/core/utils/images.dart';
-import 'package:mobile/core/widget/buttons.dart';
-import 'package:mobile/core/widget/text_field.dart';
-import 'package:mobile/features/authentication/presentation/bloc/auth_bloc.dart';
+import 'package:pharmarx/core/routes/app_router.gr.dart';
+import 'package:pharmarx/core/utils/images.dart';
+import 'package:pharmarx/core/widget/buttons.dart';
+import 'package:pharmarx/core/widget/text_field.dart';
+import 'package:pharmarx/features/authentication/presentation/bloc/auth_bloc.dart';
 
 @RoutePage()
 class RegisterScreen extends StatelessWidget {

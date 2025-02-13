@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile/core/theme/colors.dart';
-import 'package:mobile/core/theme/typography.dart';
+import 'package:pharmarx/core/theme/colors.dart';
+import 'package:pharmarx/core/theme/typography.dart';
 
 class CustomMainButton extends StatefulWidget {
   final VoidCallback onPressed;

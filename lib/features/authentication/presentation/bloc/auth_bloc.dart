@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:mobile/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:pharmarx/features/authentication/domain/repositories/auth_repository.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

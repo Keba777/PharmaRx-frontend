@@ -1,4 +1,4 @@
-import 'package:mobile/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:pharmarx/features/authentication/domain/repositories/auth_repository.dart';
 
 class VerifyOTP {
   final AuthRepository repository;

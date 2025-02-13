@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/core/theme/colors.dart';
+import 'package:pharmarx/core/theme/colors.dart';
 
 
 class TextStyles {

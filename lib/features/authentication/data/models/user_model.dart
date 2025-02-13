@@ -1,5 +1,5 @@
 
-import 'package:mobile/features/authentication/domain/entities/user.dart';
+import 'package:pharmarx/features/authentication/domain/entities/user.dart';
 
 class UserModel extends User {
   UserModel({required super.id, required super.email, required super.role, required super.firstName});

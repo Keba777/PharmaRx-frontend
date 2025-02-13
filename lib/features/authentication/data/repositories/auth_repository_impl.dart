@@ -1,5 +1,5 @@
-import 'package:mobile/features/authentication/data/datasources/auth_remote_data_source.dart';
-import 'package:mobile/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:pharmarx/features/authentication/data/datasources/auth_remote_data_source.dart';
+import 'package:pharmarx/features/authentication/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
